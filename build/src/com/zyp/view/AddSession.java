@@ -50,7 +50,7 @@ public class AddSession extends JInternalFrame {
 	private List<Cinema> cinemalist;
 	private List<Hall> halllist;
 	private List<Session> sessionlist;
-	private Font font = new Font("楷体", 0, 20);
+	private Font font = new Font("Arial", 0, 20);
 	private CinemaService cinemaservice=new CinemaServiceImpl();
 	private HallService hallservice=new HallServiceImpl();
 	private SessionService sessionservice=new SessionServiceImpl();
@@ -79,7 +79,7 @@ public class AddSession extends JInternalFrame {
 	public AddSession() {
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("添加场次");
+		setTitle("Add Session");
 		setBounds(100, 100, 1400, 900);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -88,64 +88,64 @@ public class AddSession extends JInternalFrame {
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
 		
-		JLabel lblNewLabel = new JLabel("影院编号：");
-		lblNewLabel.setFont(new Font("楷体", Font.PLAIN, 20));
+		JLabel lblNewLabel = new JLabel("Theater NO.: ");
+		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 20));
 		
 		jcIdText = new JTextField();
-		jcIdText.setFont(new Font("楷体", Font.PLAIN, 20));
+		jcIdText.setFont(new Font("Arial", Font.PLAIN, 20));
 		jcIdText.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("场厅编号:");
-		lblNewLabel_1.setFont(new Font("楷体", Font.PLAIN, 20));
+		JLabel lblNewLabel_1 = new JLabel("Hall NO.: ");
+		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 20));
 		
 		jhallText = new JTextField();
-		jhallText.setFont(new Font("楷体", Font.PLAIN, 20));
+		jhallText.setFont(new Font("Arial", Font.PLAIN, 20));
 		jhallText.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("电影编号:");
-		lblNewLabel_2.setFont(new Font("楷体", Font.PLAIN, 20));
+		JLabel lblNewLabel_2 = new JLabel("Movie NO.: ");
+		lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 20));
 		
 		jmIdText = new JTextField();
-		jmIdText.setFont(new Font("楷体", Font.PLAIN, 20));
+		jmIdText.setFont(new Font("Arial", Font.PLAIN, 20));
 		jmIdText.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("价格:");
-		lblNewLabel_3.setFont(new Font("楷体", Font.PLAIN, 20));
+		JLabel lblNewLabel_3 = new JLabel("Price: ");
+		lblNewLabel_3.setFont(new Font("Arial", Font.PLAIN, 20));
 		
 		jpriceText = new JTextField();
-		jpriceText.setFont(new Font("楷体", Font.PLAIN, 20));
+		jpriceText.setFont(new Font("Arial", Font.PLAIN, 20));
 		jpriceText.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("时间:");
-		lblNewLabel_4.setFont(new Font("楷体", Font.PLAIN, 20));
+		JLabel lblNewLabel_4 = new JLabel("Time: ");
+		lblNewLabel_4.setFont(new Font("Arial", Font.PLAIN, 20));
 		
 		jtimeText = new JTextField();
-		jtimeText.setFont(new Font("楷体", Font.PLAIN, 20));
+		jtimeText.setFont(new Font("Arial", Font.PLAIN, 20));
 		jtimeText.setColumns(10);
 		
-		JLabel lblNewLabel_5 = new JLabel("剩余座位：");
-		lblNewLabel_5.setFont(new Font("楷体", Font.PLAIN, 20));
+		JLabel lblNewLabel_5 = new JLabel("Seats remaining: ");
+		lblNewLabel_5.setFont(new Font("Arial", Font.PLAIN, 20));
 		
 		jremainText = new JTextField();
-		jremainText.setFont(new Font("楷体", Font.PLAIN, 20));
+		jremainText.setFont(new Font("Arial", Font.PLAIN, 20));
 		jremainText.setColumns(10);
 		
-		JButton btnNewButton = new JButton("添加场次");
+		JButton btnNewButton = new JButton("Add Session");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				addsessionactionPerformed(e);
 			}
 		});
-		btnNewButton.setFont(new Font("楷体", Font.PLAIN, 20));
+		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 20));
 		
-		JLabel lblNewLabel_6 = new JLabel("电影院");
-		lblNewLabel_6.setFont(new Font("楷体", Font.PLAIN, 20));
+		JLabel lblNewLabel_6 = new JLabel("Theater");
+		lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 20));
 		
-		JLabel lblNewLabel_7 = new JLabel("场厅");
-		lblNewLabel_7.setFont(new Font("楷体", Font.PLAIN, 20));
+		JLabel lblNewLabel_7 = new JLabel("Hall");
+		lblNewLabel_7.setFont(new Font("Arial", Font.PLAIN, 20));
 		
-		JLabel lblNewLabel_8 = new JLabel("场次");
-		lblNewLabel_8.setFont(new Font("楷体", Font.PLAIN, 20));
+		JLabel lblNewLabel_8 = new JLabel("Session");
+		lblNewLabel_8.setFont(new Font("Arial", Font.PLAIN, 20));
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
@@ -262,7 +262,7 @@ public class AddSession extends JInternalFrame {
 				new Object[][] {
 				},
 				new String[] {
-					"影院编号", "影院名", "影院地址"
+					"Theater NO.", "Name", "Address"
 				}
 			) {
 				boolean[] columnEditables = new boolean[] {
@@ -280,7 +280,7 @@ public class AddSession extends JInternalFrame {
 		cinematable.setDefaultRenderer(Object.class, r);
 		cinematable.setRowHeight(70);
 		cinematable.setFont(font);
-		cinematable.getTableHeader().setFont(new Font("楷体", 1, 20));
+		cinematable.getTableHeader().setFont(new Font("Arial", 1, 20));
 		cinematable.getTableHeader().setBackground(Color.orange);
 		cinematable.getTableHeader().setReorderingAllowed(false); // 不可交换顺序
 		cinematable.getTableHeader().setResizingAllowed(false); // 不可拉动表格
@@ -300,7 +300,7 @@ public class AddSession extends JInternalFrame {
 				new Object[][] {
 				},
 				new String[] {
-					"场厅编号", "场厅名", "影院编号","场厅容量"
+					"Hall NO.", "Name", "Theater NO.","Capacity"
 				}
 			) {
 				boolean[] columnEditables = new boolean[] {
@@ -317,10 +317,10 @@ public class AddSession extends JInternalFrame {
 		halltable.setDefaultRenderer(Object.class, r);
 		halltable.setRowHeight(70);
 		halltable.setFont(font);
-		halltable.getTableHeader().setFont(new Font("楷体", 1, 20));
+		halltable.getTableHeader().setFont(new Font("Arial", 1, 20));
 		halltable.getTableHeader().setBackground(Color.orange);
-		halltable.getTableHeader().setReorderingAllowed(false); // 不可交换顺序
-		halltable.getTableHeader().setResizingAllowed(false); // 不可拉动表格
+		halltable.getTableHeader().setReorderingAllowed(false); 
+		halltable.getTableHeader().setResizingAllowed(false); 
 		halltable.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent me) {
@@ -342,7 +342,7 @@ public class AddSession extends JInternalFrame {
 					new Object[][] {
 					},
 					new String[] {
-						"场次编号", "场厅编号", "影院编号","电影编号","开始时间","价格","剩余座位"
+						"Session NO.", "Hall NO.", "Theater NO.","Movie NO.","Start Time","Price","Seats Remain"
 					}
 				) {
 					boolean[] columnEditables = new boolean[] {
@@ -357,11 +357,11 @@ public class AddSession extends JInternalFrame {
 			r.setHorizontalAlignment(JLabel.CENTER);
 			sessiontable.setDefaultRenderer(Object.class, r);
 			sessiontable.setRowHeight(70);
-			sessiontable.setFont(new Font("楷体", 0, 10));
-			sessiontable.getTableHeader().setFont(new Font("楷体", 1, 15));
+			sessiontable.setFont(new Font("Arial", 0, 10));
+			sessiontable.getTableHeader().setFont(new Font("Arial", 1, 15));
 			sessiontable.getTableHeader().setBackground(Color.orange);
-			sessiontable.getTableHeader().setReorderingAllowed(false); // 不可交换顺序
-			sessiontable.getTableHeader().setResizingAllowed(false); // 不可拉动表格
+			sessiontable.getTableHeader().setReorderingAllowed(false); 
+			sessiontable.getTableHeader().setResizingAllowed(false); 
 			
 			sessiontable.addMouseListener(new MouseAdapter() {
 				@Override
@@ -390,28 +390,28 @@ public class AddSession extends JInternalFrame {
 						 if(movieservice.queryMovieById(mId)!=null) {
 							Session session=new Session(hId,cId,mId,beginTime,price,remain);
 							if(sessionservice.addSession(session)==1) {
-								JOptionPane.showMessageDialog(null, "添加成功"); 
+								JOptionPane.showMessageDialog(null, "Add Successfull"); 
 								reset();
 							}else {
-								JOptionPane.showMessageDialog(null, "添加失败"); 
+								JOptionPane.showMessageDialog(null, "Add Failed"); 
 							}
 									
 						 }else {
-							 JOptionPane.showMessageDialog(null, "不存在此电影"); 
+							 JOptionPane.showMessageDialog(null, "Movie does not exist"); 
 						 }
 					 }else {
-						 JOptionPane.showMessageDialog(null, "不存在此场厅"); 
+						 JOptionPane.showMessageDialog(null, "Hall does not exist"); 
 					 }
 				 }else {
-					 JOptionPane.showMessageDialog(null, "不存在此影院厅"); 
+					 JOptionPane.showMessageDialog(null, "Theater does not exist"); 
 				 }
 				
 			} catch (NumberFormatException e2) {
 				// TODO: handle exception
-				JOptionPane.showMessageDialog(null, "输入格式错误");
+				JOptionPane.showMessageDialog(null, "Wrong Format");
 			} catch (ParseException e1) {
 				// TODO Auto-generated catch block
-				JOptionPane.showMessageDialog(null, "时间输入格式错误");
+				JOptionPane.showMessageDialog(null, "Time Wrong Format");
 			}
 		}
 	}
@@ -451,7 +451,7 @@ public class AddSession extends JInternalFrame {
 	}
     private void fillsessiontable(List<Session> sessionlist2) {
     	DefaultTableModel dtm=(DefaultTableModel) sessiontable.getModel();
-		dtm.setRowCount(0); // 设置成0行
+		dtm.setRowCount(0); 
 		int sessionRow=sessionlist2.size();
 		for(int i=0;i<sessionRow;i++) {
 			
@@ -468,7 +468,7 @@ public class AddSession extends JInternalFrame {
     }
 	private void fillCinemaTable(List<Cinema> cinemalist2) {
 		DefaultTableModel dtm=(DefaultTableModel) cinematable.getModel();
-		dtm.setRowCount(0); // 设置成0行
+		dtm.setRowCount(0); 
 		int cinemaRow= cinemalist2.size();
 		for(int i=0;i<cinemaRow;i++) {
 			Vector v=new Vector();
@@ -482,7 +482,7 @@ public class AddSession extends JInternalFrame {
 	}
 	private void fillhalltableTable(List<Hall> halllist2) {
 		DefaultTableModel dtm=(DefaultTableModel) halltable.getModel();
-		dtm.setRowCount(0); // 设置成0行
+		dtm.setRowCount(0); 
 		int hallRow=halllist2.size();
 		for(int i=0;i<hallRow;i++) {
 			Vector v=new Vector();
@@ -496,27 +496,27 @@ public class AddSession extends JInternalFrame {
 	}
 	public boolean judge() {
 		if("".equals(jcIdText.getText())) {
-			JOptionPane.showMessageDialog(null, "影院编号不能为空");
+			JOptionPane.showMessageDialog(null, "Theater NO. cannot be empty");
 			return false;
 		}
 		if("".equals(jhallText.getText())) {
-			JOptionPane.showMessageDialog(null, "场厅编号不能为空");
+			JOptionPane.showMessageDialog(null, "Hall NO. cannot be empty");
 			return false;
 		}
 		if("".equals(jmIdText.getText())) {
-			JOptionPane.showMessageDialog(null, "电影编号不能为空");
+			JOptionPane.showMessageDialog(null, "Movie NO. cannot be empty");
 			return false;
 		}
 		if("".equals(jpriceText.getText())) {
-			JOptionPane.showMessageDialog(null, "电影价格不能为空");
+			JOptionPane.showMessageDialog(null, "Price cannot be empty");
 			return false;
 		}
 		if("".equals(jtimeText.getText())) {
-			JOptionPane.showMessageDialog(null, "场次时间不能为空");
+			JOptionPane.showMessageDialog(null, "Session time cannot be empty");
 			return false;
 		}
 		if("".equals(jremainText.getText())) {
-			JOptionPane.showMessageDialog(null, "剩余座位不能为空");
+			JOptionPane.showMessageDialog(null, "Seat remaining cannot be empty");
 			return false;
 		}
 		return true;

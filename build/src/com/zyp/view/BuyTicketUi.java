@@ -34,10 +34,10 @@ public class BuyTicketUi extends JFrame implements ActionListener {
 	private JPanel p2 = new JPanel();
 	private JPanel p3 = new JPanel();
 	private JButton btlist[];
-	private JButton reset = new JButton("重置");
-	private JButton jbuy = new JButton("购买");
-	private JButton returnuser = new JButton("返回主页");
-	private JButton returnlast = new JButton("返回上一层");
+	private JButton reset = new JButton("Reset");
+	private JButton jbuy = new JButton("Purchase");
+	private JButton returnuser = new JButton("Back to HOME");
+	private JButton returnlast = new JButton("Back");
 
 	private TextField lblRe = new TextField(20);
 	private UserService userservice = new UserServiceImpl();
@@ -58,11 +58,11 @@ public class BuyTicketUi extends JFrame implements ActionListener {
 		this.mo = mo;
 		this.ha = ha;
 		list = ticketService.queryAllTicketsId(se.getsId());
-		jbuy.setFont(new Font("楷体", Font.BOLD, 20));
-		returnuser.setFont(new Font("楷体", Font.BOLD, 20));
-		returnlast.setFont(new Font("楷体", Font.BOLD, 20));
-		reset.setFont(new Font("楷体", Font.BOLD, 20));
-		lblRe.setFont(new Font("楷体", Font.BOLD, 20));
+		jbuy.setFont(new Font("Arial", Font.BOLD, 20));
+		returnuser.setFont(new Font("Arial", Font.BOLD, 20));
+		returnlast.setFont(new Font("Arial", Font.BOLD, 20));
+		reset.setFont(new Font("Arial", Font.BOLD, 20));
+		lblRe.setFont(new Font("Arial", Font.BOLD, 20));
 		this.setSize(1000, 1000);
 		num = ha.getCapacity();
 		int rows = (num + 9) / 10;
@@ -161,18 +161,18 @@ public class BuyTicketUi extends JFrame implements ActionListener {
 						se.setRemain(se.getRemain() - seatlist.size());
 						sessionservice.updateSession(se);
 						
-						JOptionPane.showMessageDialog(null, "购买成功,余额:"+remoney);
+						JOptionPane.showMessageDialog(null, "Purchase Successful,Balance:"+remoney);
 						new BuyTicketUi(u,se,mo,ha);
 						dispose();
 						
 					} else {
-						JOptionPane.showMessageDialog(null, "系统错误");
+						JOptionPane.showMessageDialog(null, "System Error");
 					}
 				} else {
-					JOptionPane.showMessageDialog(null, "余额不足");
+					JOptionPane.showMessageDialog(null, "Insufficient Balance");
 				}
 			} else {
-				JOptionPane.showMessageDialog(null, "请选择座位");
+				JOptionPane.showMessageDialog(null, "Please choose a seat");
 			}
 		}
 	}
